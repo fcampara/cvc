@@ -20,6 +20,7 @@ module.exports = {
     'eslint-plugin-import-helpers',
   ],
   rules: {
+    'multiline-ternary': 'off',
     'comma-dangle': 'off',
     'prettier/prettier': 'error',
     'no-use-before-define': 'off',
@@ -42,5 +43,10 @@ module.exports = {
         alphabetize: { order: 'asc', ignoreCase: true },
       },
     ],
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 }

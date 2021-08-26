@@ -11,7 +11,10 @@
     "eject": "react-scripts eject"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": [
+      "eslint --ext .js,.jsx,.ts,.tsx src --color",
+      "prettier --write --ignore-unknown"
+    ]
   },
   "dependencies": {
     "history": "^5.0.1",
