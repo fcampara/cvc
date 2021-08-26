@@ -11,7 +11,7 @@
     "eject": "react-scripts eject"
   },
   "lint-staged": {
-    "**/*": [
+    "src/**/*.{js,ts,jsx,tsx}": [
       "eslint --ext .js,.jsx,.ts,.tsx src --color",
       "prettier --write --ignore-unknown"
     ]
