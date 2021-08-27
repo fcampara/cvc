@@ -3,12 +3,12 @@ import { Controller } from 'react-hook-form'
 import { Label, Input } from './styles'
 import {
   ICheckboxController,
-  ICheckboxUnController,
+  ICheckboxUncontroller,
   ICheckboxComponent,
 } from './types'
 
-const CheckboxUnController: React.FC<ICheckboxUnController> = (
-  props: ICheckboxUnController
+const CheckboxUncontroller: React.FC<ICheckboxUncontroller> = (
+  props: ICheckboxUncontroller
 ) => {
   const { label, value, onChange } = props
 
@@ -30,14 +30,20 @@ const CheckController: React.FC<ICheckboxController> = (
       name={name}
       control={control}
       defaultValue={false}
-      render={({ field }) => <CheckboxUnController label={label} {...field} />}
+      render={({ field }) => (
+        <CheckboxUncontroller
+          label={label}
+          value={field.value}
+          onChange={({ target }) => field.onChange(target.value)}
+        />
+      )}
     />
   )
 }
 
 export const Checkbox: ICheckboxComponent = {
   Controller: CheckController,
-  UnController: CheckboxUnController,
+  Uncontroller: CheckboxUncontroller,
 }
 
-export default React.memo(CheckboxUnController)
+export default React.memo(CheckboxUncontroller)

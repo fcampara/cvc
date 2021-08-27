@@ -1,5 +1,4 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Checkbox from './index'
 
@@ -12,8 +11,7 @@ export default {
 } as ComponentMeta<typeof Checkbox>
 
 const Template: ComponentStory<typeof Checkbox> = (args) => {
-  const { control } = useForm()
-  return <Checkbox {...args} control={control} />
+  return <Checkbox {...args} />
 }
 
 export const Default = Template.bind({})

@@ -8,7 +8,7 @@ export interface ICheckboxController
   control: Control
 }
 
-export interface ICheckboxUnController
+export interface ICheckboxUncontroller
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
   value: boolean
@@ -17,5 +17,5 @@ export interface ICheckboxUnController
 
 export interface ICheckboxComponent {
   Controller: React.FC<ICheckboxController>
-  UnController: React.FC<ICheckboxUnController>
+  Uncontroller: React.FC<ICheckboxUncontroller>
 }
