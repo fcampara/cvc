@@ -7,6 +7,7 @@ export const Label = styled.label`
 `
 
 export const Select = styled.select`
+  cursor: pointer;
   height: 32px;
   padding: 4px;
 `

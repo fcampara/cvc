@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { name, datatype } from 'faker'
 import Select from './index'
 
-describe('Checkbox', () => {
+describe('Select', () => {
   it('should call event onChange after click option', async () => {
     const label = name.firstName()
     const options = Array(20)
