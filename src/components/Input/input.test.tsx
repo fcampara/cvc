@@ -36,4 +36,13 @@ describe('Input', () => {
       expect(onChange).toBeCalled()
     })
   })
+  describe('When pass props "prepend"', () => {
+    it('Must show value passed', () => {
+      const prepend = lorem.word()
+      const screen = renderComponent({ prepend })
+      const existPrepend = screen.getByText(prepend)
+
+      expect(existPrepend).toBeDefined()
+    })
+  })
 })
