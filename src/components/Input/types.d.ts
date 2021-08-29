@@ -1,10 +1,7 @@
 import React from 'react'
 
-export interface IInputController
+export interface IInputUncontroller
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string
-}
-
-export interface ICheckboxComponent {
-  Controller: React.FC<IInputController>
+  label?: string
+  prepend?: string
 }
