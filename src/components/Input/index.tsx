@@ -1,12 +1,17 @@
 import React from 'react'
 import { Label, Input, Container } from './styles'
+import { IInputUncontroller } from './types'
 
-const InputUncontroller: React.FC = () => {
+const InputUncontroller: React.FC<IInputUncontroller> = (
+  props: IInputUncontroller
+) => {
+  const { label, prepend, ...restProps } = props
+
   return (
     <Label>
-      Input
+      {label}
       <Container>
-        R$ <Input />
+        {prepend} <Input data-testid="input" {...restProps} />
       </Container>
     </Label>
   )
