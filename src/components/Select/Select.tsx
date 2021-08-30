@@ -1,21 +1,21 @@
 import React from 'react'
 import { Controller } from 'react-hook-form'
 import { Label, Select as StyledSelect } from './styles'
-import {
-  ISelectController,
-  ISelectUncontroller,
-  ISelectComponent,
-} from './types'
+import { ISelectController, ISelectUncontroller } from './types'
 
 const SelectUncontroller: React.FC<ISelectUncontroller> = (
   props: ISelectUncontroller
 ) => {
-  const { label, options = [], ...restProps } = props
+  const { label, options = [], onChange, ...restProps } = props
 
   return (
     <Label>
       {label}
-      <StyledSelect {...restProps}>
+      <StyledSelect
+        {...restProps}
+        onChange={({ currentTarget }) => {
+          onChange(currentTarget.value)
+        }}>
         {options.map(({ label, value }) => (
           <option data-testid={value} key={value} value={value}>
             {label}
@@ -26,7 +26,7 @@ const SelectUncontroller: React.FC<ISelectUncontroller> = (
   )
 }
 
-const SelectController: React.FC<ISelectController> = (
+export const SelectController: React.FC<ISelectController> = (
   props: ISelectController
 ) => {
   const { control, name, ...restProps } = props
@@ -39,10 +39,4 @@ const SelectController: React.FC<ISelectController> = (
     />
   )
 }
-
-export const Select: ISelectComponent = {
-  Controller: SelectController,
-  Uncontroller: SelectUncontroller,
-}
-
 export default React.memo(SelectUncontroller)
