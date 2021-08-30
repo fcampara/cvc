@@ -33,7 +33,7 @@ export const Input = styled.input`
   outline: none;
   background-color: ${(props) => props.theme.palette.common.white};
 
-  &::focus {
+  &:focus {
     border: none;
   }
 `

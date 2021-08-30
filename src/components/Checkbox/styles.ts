@@ -8,4 +8,6 @@ export const Label = styled.label`
   grid-gap: 2px;
 `
 
-export const Input = styled.input.attrs({ type: 'checkbox' })``
+export const Input = styled.input.attrs({ type: 'checkbox' })`
+  cursor: pointer;
+`

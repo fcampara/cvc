@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react'
 import { lorem } from 'faker'
 import { ThemeProvider } from 'styled-components'
 import theme from '../../theme'
-import Input from './index'
+import Input from './Input'
 import { IInputUncontroller } from './types'
 
 const renderComponent = (props?: IInputUncontroller) => {

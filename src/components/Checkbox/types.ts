@@ -1,6 +1,8 @@
 import React from 'react'
 import { Control } from 'react-hook-form'
 
+type BaseCheckbox = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value'>
+
 export interface ICheckboxController
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
@@ -8,14 +10,8 @@ export interface ICheckboxController
   control: Control
 }
 
-export interface ICheckboxUncontroller
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface ICheckboxUncontroller extends BaseCheckbox {
   label: string
   value: boolean
   name?: string
-}
-
-export interface ICheckboxComponent {
-  Controller: React.FC<ICheckboxController>
-  Uncontroller: React.FC<ICheckboxUncontroller>
 }
