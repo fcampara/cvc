@@ -4,6 +4,7 @@ import { IHotel, IHotelFilter } from '../../../@types/hotel'
 import useDebounce from '../../../hooks/useDebounce'
 import { getHotels } from '../../../services/hotels'
 import Card from './Card'
+import { List } from './styles'
 
 const HotelList: React.FC = () => {
   const [hotels, setHotels] = useState<IHotel[]>([])
@@ -23,11 +24,11 @@ const HotelList: React.FC = () => {
   }, [debouncedValue])
 
   return (
-    <div>
+    <List>
       {hotels.map((hotel) => (
         <Card key={hotel.id} {...hotel} />
       ))}
-    </div>
+    </List>
   )
 }
 

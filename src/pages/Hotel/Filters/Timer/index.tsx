@@ -8,7 +8,7 @@ const ONE_SECOND = 1000
 const FIFTEEN_MINUTOS_IN_SECOND = 900
 
 const HolteFilterTime: React.FC = () => {
-  const { control } = useFormContext()
+  const { control, setValue } = useFormContext()
   const [timeLeft, setTimeLeft] = useState(FIFTEEN_MINUTOS_IN_SECOND)
   const filter = useWatch({
     control,
@@ -21,6 +21,7 @@ const HolteFilterTime: React.FC = () => {
       setTimeLeft((oldTime) => {
         let nextTime = oldTime - 1
         if (nextTime < 0) nextTime = 0
+        if (nextTime === 0) setValue('refresh', !filter.refresh)
         return nextTime
       })
     }, ONE_SECOND)

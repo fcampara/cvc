@@ -24,4 +24,5 @@ export type IHotelFilter = {
   priceMin: number
   priceMax: number
   broker: string
+  refresh?: boolean
 }

@@ -1,10 +1,17 @@
 import { styled } from '../../../../theme'
 
-export const Card = styled.div`
+export const Card = styled.li`
   grid-gap: 16px;
   display: flex;
   padding: 8px;
   border: 1px solid black;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: 0.2s border-color;
+
+  &:hover {
+    border-color: ${({ theme }) => theme.palette.primary.main};
+  }
 
   & > img {
     height: 72px;
