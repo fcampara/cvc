@@ -16,7 +16,6 @@ module.exports = () => {
     const brokerIndex = faker.datatype.number(MAX_BROKERS - 1)
     const maxRooms = faker.datatype.number(5)
     const broker = data.brokers[brokerIndex]
-    console.log('broker', broker)
     const rooms = []
     for (let j = 0; j < maxRooms; j++) {
       rooms.push({

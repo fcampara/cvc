@@ -34,6 +34,7 @@ const buttonRounded = css`
   height: 32px;
   width: 32px;
   grid-gap: 0;
+  min-width: auto;
 `
 
 const colorsOptions = {
@@ -43,11 +44,15 @@ const colorsOptions = {
 
 export const Button = styled.button<IButtonStyle>`
   cursor: pointer;
+  height: 32px;
   border: 1px solid transparent;
   border-radius: 3px;
   font-weight: 300;
   display: flex;
   align-items: center;
+  min-width: 110px;
+  align-items: center;
+  justify-content: center;
   grid-gap: ${({ theme }) => theme.spacing.small};
   padding: ${({ theme }) => theme.spacing.small};
   margin-bottom: ${({ theme }) => theme.spacing.none};

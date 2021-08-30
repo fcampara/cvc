@@ -1,11 +1,13 @@
 import React from 'react'
 import { IHotel } from '../../../../@types/hotel'
+import { useHotel } from '../../../../context/Hotel/provider'
 import { Card } from './styles'
 
 const HotelListCard: React.FC<IHotel> = (props: IHotel) => {
-  const { name, isPreferential, broker } = props
+  const { setSelectedRooms } = useHotel()
+  const { rooms, name, isPreferential, broker } = props
   return (
-    <Card>
+    <Card onClick={() => setSelectedRooms(rooms)}>
       <img
         src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/a8/90/83/cobertura.jpg?w=900&h=-1&s=1"
         className="card__image"

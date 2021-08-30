@@ -1,6 +1,7 @@
 import { styled } from '../../../../theme'
 
 export const Card = styled.li`
+  list-style-type: none;
   grid-gap: 16px;
   display: flex;
   padding: 8px;
