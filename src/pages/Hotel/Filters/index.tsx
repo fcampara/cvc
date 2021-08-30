@@ -3,12 +3,13 @@ import { useFormContext } from 'react-hook-form'
 import { CheckController } from '../../../components/Checkbox'
 import { InputController } from '../../../components/Input'
 import { SelectController, ISelectOption } from '../../../components/Select'
+import Stars from '../../../components/Stars'
 import { getBrokers } from '../../../services/brokers'
 import { Filter, Form } from './styles'
 import Timer from './Timer'
 
 const HotelFilters: React.FC = () => {
-  const { control } = useFormContext()
+  const { control, setValue } = useFormContext()
   const [brokers, setBrokers] = useState<ISelectOption[]>([])
 
   const handleListBrokers = async () => {
@@ -18,6 +19,11 @@ const HotelFilters: React.FC = () => {
       value: name,
     }))
     setBrokers(formattedBrokers)
+  }
+
+  const handleSelectAdward = (award: number) => {
+    console.log(award)
+    setValue('award', award)
   }
 
   useEffect(() => {
@@ -39,11 +45,7 @@ const HotelFilters: React.FC = () => {
       <Filter>
         <h5>Estrelas</h5>
         <hr />
-        <CheckController
-          control={control}
-          name="isPreferential"
-          label="Mostrar recomendados"
-        />
+        <Stars maxAwards={3} onClick={(award) => handleSelectAdward(award)} />
       </Filter>
       <Filter>
         <h5>Preço</h5>

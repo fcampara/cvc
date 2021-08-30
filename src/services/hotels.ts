@@ -6,6 +6,7 @@ const URL = '/hotels'
 export const getHotels = async (filter: IHotelFilter): Promise<IHotel[]> => {
   const params = {
     broker: filter.broker,
+    award: filter.award,
     isPreferential: filter.isPreferential ? true : undefined,
   }
 

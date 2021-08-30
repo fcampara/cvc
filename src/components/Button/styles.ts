@@ -6,10 +6,6 @@ const buttonDefault = css`
   color: ${({ theme }) => theme.palette.common.black};
   background-color: ${({ theme }) => theme.palette.common.gray};
 
-  &:disabled {
-    cursor: not-allowed;
-  }
-
   &:hover {
     background-color: ${({ theme }) =>
       lighten(0.02, theme.palette.common.gray)};
@@ -19,15 +15,21 @@ const buttonPrimary = css`
   color: ${({ theme }) => theme.palette.common.white};
   background-color: ${({ theme }) => theme.palette.primary.main};
 
-  &:disabled {
-    cursor: not-allowed;
-  }
-
   &:hover {
     background-color: ${({ theme }) =>
       lighten(0.05, theme.palette.primary.main)};
   }
 `
+
+const buttonTransparent = css`
+  background-color: transparent;
+
+  &:hover {
+    background-color: ${({ theme }) =>
+      lighten(0.03, theme.palette.common.gray)};
+  }
+`
+
 const buttonRounded = css`
   border-radius: 50%;
   display: block;
@@ -40,6 +42,7 @@ const buttonRounded = css`
 const colorsOptions = {
   default: buttonDefault,
   primary: buttonPrimary,
+  transparent: buttonTransparent,
 }
 
 export const Button = styled.button<IButtonStyle>`
@@ -59,6 +62,10 @@ export const Button = styled.button<IButtonStyle>`
   text-align: center;
   transition: border 0.2s linear, color 0.2s linear, width 0.2s linear,
     background-color 0.2s linear, filter 0.2s;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 
   ${({ color }) => colorsOptions[color]}
 

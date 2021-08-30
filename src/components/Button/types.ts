@@ -2,7 +2,7 @@
 import React from 'react'
 import { DefaultTheme, ThemedCssFunction } from 'styled-components'
 
-export type ButtonColors = 'default' | 'primary'
+export type ButtonColors = 'default' | 'primary' | 'transparent'
 
 export interface IButtonStyle {
   color: ButtonColors

@@ -1,5 +1,6 @@
 import React from 'react'
 import { IHotel } from '../../../../@types/hotel'
+import Starts from '../../../../components/Stars'
 import { useHotel } from '../../../../context/Hotel/provider'
 import { Card } from './styles'
 
@@ -14,7 +15,7 @@ const HotelListCard: React.FC<IHotel> = (props: IHotel) => {
       />
       <div className="card__information">
         <h5>{name}</h5>
-        Estrelas
+        <Starts maxAwards={props.award} />
       </div>
       <div className="card__broker">
         {isPreferential && <span>É recomendado</span>}

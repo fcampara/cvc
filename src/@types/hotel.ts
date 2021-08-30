@@ -22,6 +22,7 @@ export type IHotel = {
 export type IHotelFilter = {
   isPreferential: boolean
   priceMin: number
+  award: number
   priceMax: number
   broker: string
   refresh?: boolean
