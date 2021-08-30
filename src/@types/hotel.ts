@@ -18,3 +18,10 @@ export type IHotel = {
   totalDailys: number
   rooms: IRoom[]
 }
+
+export type IHotelFilter = {
+  isPreferential: boolean
+  priceMin: number
+  priceMax: number
+  broker: string
+}

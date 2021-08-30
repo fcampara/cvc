@@ -1,9 +1,16 @@
-import { IHotel } from '../@types/hotel'
+import { IHotel, IHotelFilter } from '../@types/hotel'
 import instance from './instance'
 
 const URL = '/hotels'
 
-export const getHotels = async (): Promise<IHotel[]> => {
-  const { data } = await instance.get<IHotel[]>(URL)
+export const getHotels = async (filter: IHotelFilter): Promise<IHotel[]> => {
+  const params = {
+    broker: filter.broker,
+    isPreferential: filter.isPreferential ? true : undefined,
+  }
+
+  const { data } = await instance.get<IHotel[]>(URL, {
+    params,
+  })
   return data
 }

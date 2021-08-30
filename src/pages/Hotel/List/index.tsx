@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useFormContext, useWatch } from 'react-hook-form'
-import { IHotel } from '../../../@types/hotel'
+import { IHotel, IHotelFilter } from '../../../@types/hotel'
 import useDebounce from '../../../hooks/useDebounce'
 import { getHotels } from '../../../services/hotels'
 import Card from './Card'
@@ -10,11 +10,11 @@ const HotelList: React.FC = () => {
   const { control } = useFormContext()
   const filter = useWatch({
     control,
-  })
-  const debouncedValue = useDebounce<any>(filter, 500)
+  }) as IHotelFilter
+  const debouncedValue = useDebounce<IHotelFilter>(filter)
 
   const handleListHotels = async () => {
-    const hotels = await getHotels()
+    const hotels = await getHotels(filter)
     setHotels(hotels)
   }
 
