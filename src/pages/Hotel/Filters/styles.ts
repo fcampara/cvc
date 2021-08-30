@@ -20,5 +20,9 @@ export const Filter = styled.section`
   .filter__price {
     display: flex;
     grid-gap: 16px;
+
+    @media (max-width: ${({ theme }) => theme.screenSize.small}) {
+      flex-direction: column;
+    }
   }
 `

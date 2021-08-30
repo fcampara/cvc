@@ -2,7 +2,7 @@ import { Control } from 'react-hook-form'
 
 type IselectOptionValue = string | number | undefined
 
-type ISelectOption = {
+export type ISelectOption = {
   label: string
   value: IselectOptionValue
 }
