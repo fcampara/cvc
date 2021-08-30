@@ -1,7 +1,18 @@
 import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { name, datatype } from 'faker'
+import { ThemeProvider } from 'styled-components'
+import theme from '../../theme'
 import Select from './Select'
+import { ISelectUncontroller } from './types'
+
+const renderComponent = (props: ISelectUncontroller) => {
+  return render(
+    <ThemeProvider theme={theme}>
+      <Select {...props} />
+    </ThemeProvider>
+  )
+}
 
 describe('Select', () => {
   describe('When change option', () => {
@@ -13,14 +24,7 @@ describe('Select', () => {
 
       const [firstOption] = options
       const onChange = jest.fn()
-      render(
-        <Select
-          label={label}
-          onChange={onChange}
-          options={options}
-          value={undefined}
-        />
-      )
+      renderComponent({ label, onChange, options, value: undefined })
 
       const [select] = await screen.getAllByLabelText(label)
       await fireEvent.change(select, { target: { value: firstOption.value } })
@@ -37,14 +41,7 @@ describe('Select', () => {
 
       const [firstOption] = options
       const onChange = jest.fn()
-      render(
-        <Select
-          label={label}
-          onChange={onChange}
-          options={options}
-          value={undefined}
-        />
-      )
+      renderComponent({ label, onChange, options, value: undefined })
 
       const [select] = await screen.getAllByLabelText(label)
       await fireEvent.change(select, { target: { value: firstOption.value } })
