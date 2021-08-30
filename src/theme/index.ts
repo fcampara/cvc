@@ -1,6 +1,7 @@
 import baseStyled, { ThemedStyledInterface } from 'styled-components'
 import palette from './palette'
 import spacing from './spacing'
+export { css } from 'styled-components'
 
 const theme = {
   borderRadius: '4px',

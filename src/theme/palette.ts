@@ -3,6 +3,7 @@ export default {
     border: '#E4EAEC',
     black: '#222831',
     white: '#ffffff',
+    gray: '#efefef',
   },
   primary: {
     main: '#62a8ea',
