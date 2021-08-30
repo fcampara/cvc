@@ -1,1 +1,1 @@
-export const HOME = '/'
+export const HOTEL = '/hotel'

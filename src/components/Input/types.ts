@@ -7,8 +7,7 @@ export interface IInputUncontroller
   prepend?: string
 }
 
-export interface IInputController
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface IInputController extends IInputUncontroller {
   label: string
   name: string
   control: Control

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Controller } from 'react-hook-form'
-import { Label, Select as StyledSelect } from './styles'
+import { Label, Select } from './styles'
 import { ISelectController, ISelectUncontroller } from './types'
 
 const SelectUncontroller: React.FC<ISelectUncontroller> = (
@@ -11,7 +11,7 @@ const SelectUncontroller: React.FC<ISelectUncontroller> = (
   return (
     <Label>
       {label}
-      <StyledSelect
+      <Select
         {...restProps}
         onChange={({ currentTarget }) => {
           onChange(currentTarget.value)
@@ -21,7 +21,7 @@ const SelectUncontroller: React.FC<ISelectUncontroller> = (
             {label}
           </option>
         ))}
-      </StyledSelect>
+      </Select>
     </Label>
   )
 }

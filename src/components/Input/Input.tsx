@@ -21,21 +21,14 @@ const InputUncontroller: React.FC<IInputUncontroller> = (
 export const InputController: React.FC<IInputController> = (
   props: IInputController
 ) => {
-  const { label, name, control, ...restProps } = props
+  const { name, control, ...restProps } = props
 
   return (
     <Controller
       name={name}
       control={control}
-      defaultValue={false}
-      render={({ field }) => (
-        <InputUncontroller
-          {...restProps}
-          label={label}
-          value={field.value}
-          onChange={({ target }) => field.onChange(target.checked)}
-        />
-      )}
+      defaultValue={''}
+      render={({ field }) => <InputUncontroller {...field} {...restProps} />}
     />
   )
 }

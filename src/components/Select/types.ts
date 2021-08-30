@@ -14,7 +14,8 @@ export interface ISelectUncontroller {
   onChange: (value: IselectOptionValue) => void
 }
 
-export interface ISelectController extends ISelectUncontroller {
+export interface ISelectController
+  extends Omit<ISelectUncontroller, 'onChange' | 'value'> {
   control: Control
   name: string
 }
