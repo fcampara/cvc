@@ -1,7 +1,7 @@
 import { styled } from '../../theme'
 
 export const Container = styled.div`
-  height: calc(100vh - 32px);
+  min-height: calc(100vh - 32px);
   display: grid;
   grid-template-columns: 0.4fr 1fr;
   grid-gap: 32px;

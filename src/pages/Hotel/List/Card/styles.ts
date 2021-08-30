@@ -40,4 +40,19 @@ export const Card = styled.li`
     justify-content: space-around;
     text-align: right;
   }
+
+  @media (max-width: ${({ theme }) => theme.screenSize.small}) {
+    flex-direction: column;
+    text-align: center;
+
+    & > img {
+      width: 100%;
+    }
+
+    & > .card__broker,
+    .card__information {
+      align-items: center;
+      text-align: center;
+    }
+  }
 `

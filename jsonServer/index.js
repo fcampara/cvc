@@ -6,6 +6,7 @@ module.exports = () => {
   const data = {
     hotels: [],
     brokers: [],
+    orders: [],
   }
 
   for (let i = 0; i < MAX_BROKERS; i++) {
@@ -14,7 +15,7 @@ module.exports = () => {
 
   for (let i = 0; i < max; i++) {
     const brokerIndex = faker.datatype.number(MAX_BROKERS - 1)
-    const maxRooms = faker.datatype.number(5)
+    const maxRooms = faker.datatype.number(5) || 1
     const broker = data.brokers[brokerIndex]
     const rooms = []
     for (let j = 0; j < maxRooms; j++) {

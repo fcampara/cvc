@@ -12,6 +12,10 @@ export const ListRoom = styled.ul`
   grid-gap: 32px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${({ theme }) => theme.screenSize.small}) {
+    width: -webkit-fill-available;
+  }
 `
 
 export const CardRoom = styled.li`
@@ -19,6 +23,11 @@ export const CardRoom = styled.li`
   display: flex;
   justify-content: space-between;
   width: 420px;
+
+  @media (max-width: ${({ theme }) => theme.screenSize.small}) {
+    flex-direction: column;
+    width: auto;
+  }
 
   .room__action {
     display: flex;

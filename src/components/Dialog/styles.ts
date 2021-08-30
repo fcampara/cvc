@@ -19,4 +19,10 @@ export const Dialog = styled.dialog`
   &:not([open]) {
     display: none;
   }
+
+  @media (max-width: ${({ theme }) => theme.screenSize.small}) {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+  }
 `
